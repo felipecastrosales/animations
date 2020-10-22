@@ -1,7 +1,3 @@
-<p align="center">
-      <img src="" width="" alt=""/>
-</p>
-
 <h1 align="center">Complex Animations</h1>
 
 <h2 align="center">About 📖</h2>
@@ -22,27 +18,23 @@
 
    <p>
 
-- Reusable components made from the Flutter UI library,
-- Implemented with Flutter's easily customizable navigation feature,
-- Available with customizable Flutters widget sets for material design,
 - Includes animated Flutter pie chart,
 - Animation and carousel,
 - Carousel effect created using PageView.builder and animation,
 - Implemented with the AnimatedBuilder class,
 - Implemented with standard hero animation using the Hero Flutter widget,
 - Provides shared element transitions / shared element animations,
-- Fast Hot Reload / JIT development workflow
-- Defined with a single ThemeData using it in the app
-- Compiles to native code for fast and predictable performance for end users
+- Fast Hot Reload / JIT development workflow,
+- Defined with a single ThemeData using it in the app,
+- Compiles to native code for fast and predictable performance for end users,
 - Login with Profile,
-- Timeline,
-- Home Screen,
+- Timeline and Home Screen,
 - Settings,
 - Drawer,
 - Calendar,
 - Groups,
 - Tasks,
-- Lists,
+- Lists.
 
    </p>
 
@@ -57,7 +49,8 @@
 <h2 align="center">How to Use 🤔</h2>
 
    ```
-   First of all, correctly configure the Flutter development environment on your machine, see https://flutter.dev/docs/get-started/install
+   First of all, correctly configure the Flutter development environment on your machine, 
+   see https://flutter.dev/docs/get-started/install
    
    - Clone this repository:
    $ git clone https://github.com/felipecastrosales/animations animations
