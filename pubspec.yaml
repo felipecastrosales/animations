@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
 
 dev_dependencies:
+  effective_dart: ^1.2.0
   flutter_test:
     sdk: flutter
 
@@ -48,6 +49,16 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/
+    - assets/images/
+    
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
