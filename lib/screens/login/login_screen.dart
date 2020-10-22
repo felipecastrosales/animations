@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
 import 'widgets/form_container.dart';
 import 'widgets/sign_up_button.dart';
 import 'widgets/stagger_animation.dart';
@@ -11,12 +12,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
-  
+
   @override
   void initState() {
     super.initState();
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+          AnimationController(vsync: this, duration: Duration(seconds: 2));
   }
 
   @override
@@ -27,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 2;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -52,9 +54,7 @@ class _LoginScreenState extends State<LoginScreen>
                     SignUpButton(),
                   ],
                 ),
-                StaggerAnimation(
-                  controller: _animationController.view
-                )
+                StaggerAnimation(controller: _animationController.view)
               ],
             ),
           ],
