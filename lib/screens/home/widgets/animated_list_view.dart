@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'list_data.dart';
 
-class AnimdatedListView extends StatelessWidget {
+class AnimatedListView extends StatelessWidget {
   final Animation<EdgeInsets> listSlidePosition;
+
+  // ignore: type_annotate_public_apis
   AnimatedListView({@required this.listSlidePosition});
 
   @override
