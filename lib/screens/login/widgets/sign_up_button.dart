@@ -13,7 +13,7 @@ class SignUpButton extends StatelessWidget {
           fontWeight: FontWeight.bold,
           color: Colors.white,
           fontSize: 16,
-          letterSpacing: 0.8
+          letterSpacing: 1
         ),
       ),
     );

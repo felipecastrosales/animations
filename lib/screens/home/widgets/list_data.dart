@@ -13,16 +13,16 @@ class ListData extends StatelessWidget {
     return Container(
       margin: margin,
       decoration: BoxDecoration(
-        color: Colors.white70,
+        color: Colors.grey[50],
         border: Border(
           top: BorderSide(color: Colors.grey[200], width: 1),
-          bottom: BorderSide(color: Colors.grey[600], width: 1)
+          bottom: BorderSide(color: Colors.grey[300], width: 1)
         )
       ),
       child: Row(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.all(20),
+            margin: EdgeInsets.all(14),
             width: 50, 
             height: 50,
             decoration: BoxDecoration(
@@ -37,11 +37,12 @@ class ListData extends StatelessWidget {
               Text(
                 title, 
                 style: TextStyle(
+                  color: Colors.grey[900],
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 )
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 4),
               Text(
                 subtitle, 
                 style: TextStyle(

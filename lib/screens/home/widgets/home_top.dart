@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'category_view.dart';
 
 class HomeTop extends StatelessWidget {
@@ -9,7 +8,7 @@ class HomeTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-
+    
     return Container(
       height: screenSize.height * 0.4,
       decoration: BoxDecoration(
@@ -23,6 +22,7 @@ class HomeTop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
+                margin: EdgeInsets.only(top: 10),
                 alignment: Alignment.topRight,
                 width: containerGrow.value * 100,
                 height: containerGrow.value * 100,
@@ -45,7 +45,7 @@ class HomeTop extends StatelessWidget {
                       )),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: const Color(0xFFFF4D00),
+                    color: Theme.of(context).accentColor,
                   ),
                 ),
               ),
