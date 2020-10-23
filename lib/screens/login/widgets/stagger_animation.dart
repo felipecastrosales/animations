@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
+  
   StaggerAnimation({this.controller})
       : buttonSqueeze = Tween(
           begin: 250.0,
@@ -9,13 +10,13 @@ class StaggerAnimation extends StatelessWidget {
         ).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.0, 0.2),
+            curve: Interval(0.0, 0.150),
           ),
         ),
         buttonZoomOut = Tween<double>(
-          begin: 60,
-          end: 1000,
-        ).animate(
+          begin: 60.0,
+          end: 1000.0,
+        ).animate(    
           CurvedAnimation(
             parent: controller,
             curve: Interval(0.5, 1, curve: Curves.bounceOut),
@@ -32,26 +33,28 @@ class StaggerAnimation extends StatelessWidget {
         onTap: () {
           controller.forward();
         },
-        child: buttonZoomOut.value <= 60
-            ? Container(
-                width: buttonSqueeze.value,
-                height: 50,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: const Color(0xFFFF4D00),
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
-                child: _buildInside(context),
-              )
-            : Container(
-                width: buttonZoomOut.value,
-                height: buttonZoomOut.value,
-                decoration: BoxDecoration(
-                    color: const Color(0xFFFF4D00),
-                    shape: buttonZoomOut.value < 600
-                     ? BoxShape.circle
-                     : BoxShape.rectangle
-                    ),
-              ),
+        child: Hero(
+          tag: 'fade',
+          child: buttonZoomOut.value == 60
+              ? Container(
+                  width: buttonSqueeze.value,
+                  height: 50,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).accentColor,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: _buildInside(context),
+                )
+              : Container(
+                  width: buttonZoomOut.value,
+                  height: buttonZoomOut.value,
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).accentColor,
+                      shape: buttonZoomOut.value < 500
+                          ? BoxShape.circle
+                          : BoxShape.rectangle),
+                ),
+        ),
       ),
     );
   }

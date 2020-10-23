@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home/home_screen.dart';
+import 'screens/login/login_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Animations',
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: LoginScreen(),
         theme: ThemeData(
           brightness: Brightness.dark,
           primaryColor: const Color(0xFFFF4D00),

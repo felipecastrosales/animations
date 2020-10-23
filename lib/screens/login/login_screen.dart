@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+import '../home/home_screen.dart';
 import 'widgets/form_container.dart';
 import 'widgets/sign_up_button.dart';
 import 'widgets/stagger_animation.dart';
@@ -17,7 +18,15 @@ class _LoginScreenState extends State<LoginScreen>
   void initState() {
     super.initState();
     _animationController =
-          AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        
+    _animationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreen())
+        );
+      }
+    });
   }
 
   @override
@@ -28,7 +37,8 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 2;
+    timeDilation = 1;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -48,8 +58,11 @@ class _LoginScreenState extends State<LoginScreen>
                     Padding(
                       padding: EdgeInsets.only(top: 50, bottom: 25),
                       child: Image.asset('assets/images/check.png',
-                          width: 120, height: 120, fit: BoxFit.contain),
-                    ),
+                        width: 120, 
+                        height: 120, 
+                        fit: BoxFit.contain
+                        ),
+                     ),
                     FormContainer(),
                     SignUpButton(),
                   ],
@@ -57,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen>
                 StaggerAnimation(controller: _animationController.view)
               ],
             ),
-          ],
+          ],  
         ),
       ),
     );
