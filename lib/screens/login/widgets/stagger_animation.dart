@@ -41,7 +41,7 @@ class StaggerAnimation extends StatelessWidget {
                   height: 50,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: Theme.of(context).accentColor,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: _buildInside(context),
                 )
@@ -49,7 +49,7 @@ class StaggerAnimation extends StatelessWidget {
                   width: buttonZoomOut.value,
                   height: buttonZoomOut.value,
                   decoration: BoxDecoration(
-                      color: Theme.of(context).accentColor,
+                      color: Theme.of(context).primaryColor,
                       shape: buttonZoomOut.value < 500
                           ? BoxShape.circle
                           : BoxShape.rectangle),
@@ -67,7 +67,7 @@ class StaggerAnimation extends StatelessWidget {
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            letterSpacing: 0.8),
+            letterSpacing: 1),
       );
     } else {
       return CircularProgressIndicator(

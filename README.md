@@ -18,23 +18,15 @@
 
    <p>
 
-- Includes animated Flutter pie chart,
-- Animation and carousel,
-- Carousel effect created using PageView.builder and animation,
+- Incredible effects and animations,
+
 - Implemented with the AnimatedBuilder class,
+
 - Implemented with standard hero animation using the Hero Flutter widget,
-- Provides shared element transitions / shared element animations,
-- Fast Hot Reload / JIT development workflow,
-- Defined with a single ThemeData using it in the app,
-- Compiles to native code for fast and predictable performance for end users,
-- Login with Profile,
-- Timeline and Home Screen,
-- Settings,
-- Drawer,
-- Calendar,
-- Groups,
-- Tasks,
-- Lists.
+
+- Provides transitions of elements and pages,
+
+- A great base app for you who want to use beautiful animations in your apps.
 
    </p>
 
