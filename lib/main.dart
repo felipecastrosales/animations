@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.dark,
           primaryColor: const Color(0xFFFF4D00),
-          accentColor: const Color(0xFFFF6700),
           fontFamily: 'OpenSans',
         ));
   }
