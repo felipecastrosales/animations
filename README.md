@@ -11,7 +11,12 @@
 
 <h2 align="center">Preview 📱</h2>
 
-   > * In development
+  <p align="center">
+      <img src="assets/images/demo/animationsdemo.gif" alt="Animations Demo">
+   </p>
+   
+   > * See also in [`demo`](https://github.com/felipecastrosales/animations/tree/master/assets/images/demo/animationsdemo.gif) folder. 🧐📂
+
 ---
 
 <h2 align="center">Functionalities and Resources 🛠️</h2>

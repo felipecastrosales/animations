@@ -37,7 +37,7 @@ class HomeTop extends StatelessWidget {
                   alignment: Alignment.center,                
                   width: containerGrow.value * 30,
                   height: containerGrow.value * 30,
-                  child: Text('2',
+                  child: Text('5',
                       style: TextStyle(
                         fontSize: containerGrow.value * 15,
                         fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class HomeTop extends StatelessWidget {
                       )),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),
