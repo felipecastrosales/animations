@@ -18,8 +18,8 @@ class StaggerAnimation extends StatelessWidget {
           ),
         ),
         fadeAnimation = ColorTween(
-          begin: const Color(0xFFFF4D00),
-          end: const Color(0xFFFF6700), 
+          begin: const Color.fromRGBO(255, 77, 0, 1.0),
+          end: const Color.fromRGBO(255, 129, 0, 0.0), 
         ).animate(
           CurvedAnimation(
             parent: controller,
