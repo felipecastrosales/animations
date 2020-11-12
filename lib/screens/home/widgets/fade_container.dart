@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class FadeContainer extends StatelessWidget {
   final Animation<Color> fadeAnimation;
   const FadeContainer({this.fadeAnimation});
-
   @override
   Widget build(BuildContext context) {
     return Hero(

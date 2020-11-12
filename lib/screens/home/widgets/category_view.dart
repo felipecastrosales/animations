@@ -35,8 +35,8 @@ class _CategoryViewState extends State<CategoryView> {
             icon: Icon(Icons.arrow_back_ios_rounded),
             disabledColor: Colors.white54,
             onPressed: _category > 0
-             ? selectBackward
-             : null,
+              ? selectBackward
+              : null,
           ),
           Text(categories[_category].toUpperCase(),
               textAlign: TextAlign.center,
@@ -50,8 +50,8 @@ class _CategoryViewState extends State<CategoryView> {
             icon: Icon(Icons.arrow_forward_ios_rounded),
             disabledColor: Colors.white54,
             onPressed: _category < categories.length - 1
-             ? selectFoward
-             : null, 
+              ? selectFoward
+              : null, 
           ),
         ]);
   }
