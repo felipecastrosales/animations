@@ -61,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen>
                         width: 120, 
                         height: 120, 
                         fit: BoxFit.contain
-                        ),
-                     ),
+                      ),
+                    ),
                     FormContainer(),
                     SignUpButton(),
                   ],

@@ -4,7 +4,6 @@ class InputField extends StatelessWidget {
   final String hint;
   final bool obscure;
   final IconData icon;
-
   InputField({this.hint, this.obscure, this.icon});
 
   @override

@@ -5,7 +5,6 @@ class ListData extends StatelessWidget {
   final String subtitle;
   final ImageProvider image;
   final EdgeInsets margin;
-
   const ListData({this.title, this.subtitle, this.image, this.margin});
   
   @override
@@ -26,10 +25,12 @@ class ListData extends StatelessWidget {
             width: 50, 
             height: 50,
             decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: image,
-                    fit: BoxFit.cover)),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: image,
+                fit: BoxFit.cover
+              )
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
