@@ -19,7 +19,6 @@ class _LoginScreenState extends State<LoginScreen>
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 2));
-        
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         Navigator.of(context).pushReplacement(
@@ -38,7 +37,6 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     timeDilation = 0.8;
-
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
