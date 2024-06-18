@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CategoryView extends StatefulWidget {
+  const CategoryView({super.key});
+
   @override
-  _CategoryViewState createState() => _CategoryViewState();
+  State<CategoryView> createState() => _CategoryViewState();
 }
 
 class _CategoryViewState extends State<CategoryView> {
@@ -32,26 +34,24 @@ class _CategoryViewState extends State<CategoryView> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(
-          icon: Icon(Icons.arrow_back_ios_rounded),
+          icon: const Icon(Icons.arrow_back_ios_rounded),
           disabledColor: Colors.white54,
-          onPressed: _category > 0
-            ? selectBackward
-            : null,
+          onPressed: _category > 0 ? selectBackward : null,
         ),
-        Text(categories[_category].toUpperCase(),
+        Text(
+          categories[_category].toUpperCase(),
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 15,
             letterSpacing: 2,
-            fontWeight: FontWeight.w100)
+            fontWeight: FontWeight.w100,
+          ),
         ),
         IconButton(
-          icon: Icon(Icons.arrow_forward_ios_rounded),
+          icon: const Icon(Icons.arrow_forward_ios_rounded),
           disabledColor: Colors.white54,
-          onPressed: _category < categories.length - 1
-            ? selectFoward
-            : null, 
+          onPressed: _category < categories.length - 1 ? selectFoward : null,
         ),
       ],
     );

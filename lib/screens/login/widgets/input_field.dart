@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
+  const InputField({
+    super.key,
+    required this.hint,
+    required this.obscure,
+    required this.icon,
+  });
+
   final String hint;
   final bool obscure;
   final IconData icon;
-  InputField({this.hint, this.obscure, this.icon});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return DecoratedBox(
+      decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(
             color: Colors.white24,
-            width: 0.5
+            width: 0.5,
           ),
         ),
       ),
       child: TextFormField(
         obscureText: obscure,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
         ),
         decoration: InputDecoration(
@@ -29,11 +35,11 @@ class InputField extends StatelessWidget {
           ),
           border: InputBorder.none,
           hintText: hint,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),
-          contentPadding: EdgeInsets.fromLTRB(5, 30, 30, 30)
+          contentPadding: const EdgeInsets.fromLTRB(5, 30, 30, 30),
         ),
       ),
     );

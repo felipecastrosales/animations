@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'input_field.dart';
 
 class FormContainer extends StatelessWidget {
+  const FormContainer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 25),
-      child: Form(
+      margin: const EdgeInsets.symmetric(horizontal: 25),
+      child: const Form(
         child: Column(
           children: <Widget>[
             InputField(
@@ -17,7 +19,7 @@ class FormContainer extends StatelessWidget {
             InputField(
               hint: 'Password',
               obscure: true,
-              icon: Icons.lock_outline_rounded
+              icon: Icons.lock_outline_rounded,
             ),
           ],
         ),

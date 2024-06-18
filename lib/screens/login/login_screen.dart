@@ -6,30 +6,37 @@ import 'widgets/sign_up_button.dart';
 import 'widgets/stagger_animation.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
+
+  void statusListener(AnimationStatus status) {
+    if (status == AnimationStatus.completed) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
-    _animationController.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => HomeScreen())
-        );
-      }
-    });
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    _animationController.addStatusListener(statusListener);
   }
 
   @override
   void dispose() {
+    _animationController.removeStatusListener(statusListener);
     _animationController.dispose();
     super.dispose();
   }
@@ -39,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen>
     timeDilation = 0.8;
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/background.jpg'),
             fit: BoxFit.cover,
@@ -54,21 +61,24 @@ class _LoginScreenState extends State<LoginScreen>
                 Column(
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(top: 50, bottom: 25),
-                      child: Image.asset('assets/images/check.png',
-                        width: 120, 
-                        height: 120, 
-                        fit: BoxFit.contain
+                      padding: const EdgeInsets.only(top: 50, bottom: 25),
+                      child: Image.asset(
+                        'assets/images/check.png',
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.contain,
                       ),
                     ),
-                    FormContainer(),
-                    SignUpButton(),
+                    const FormContainer(),
+                    const SignUpButton(),
                   ],
                 ),
-                StaggerAnimation(controller: _animationController.view)
+                StaggerAnimation(
+                  controller: _animationController,
+                ),
               ],
             ),
-          ],  
+          ],
         ),
       ),
     );
