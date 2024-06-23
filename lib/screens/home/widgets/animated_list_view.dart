@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'list_data.dart';
 
 class AnimatedListView extends StatelessWidget {
+  const AnimatedListView({
+    super.key,
+    required this.listSlidePosition,
+  });
+
   final Animation<EdgeInsets> listSlidePosition;
-  AnimatedListView({@required this.listSlidePosition});
 
   @override
   Widget build(BuildContext context) {
@@ -13,34 +17,36 @@ class AnimatedListView extends StatelessWidget {
         ListData(
           title: 'I\'m Felipe Sales',
           subtitle: 'I like to study',
-          image: AssetImage('assets/images/profile.png'),
+          image: Image.network(
+            'https://avatars.githubusercontent.com/u/59374587?v=4',
+          ).image,
           margin: listSlidePosition.value * 4,
         ),
         ListData(
           title: 'My GitHub',
           subtitle: 'Here\'s my Projects',
-          image: AssetImage('assets/images/github.png'),
+          image: const AssetImage('assets/images/github.png'),
           margin: listSlidePosition.value * 3,
         ),
         ListData(
           title: 'Flutter Study',
           subtitle: 'I study a lot of Flutter',
-          image: AssetImage('assets/images/flutter.png'),
+          image: const AssetImage('assets/images/flutter.png'),
           margin: listSlidePosition.value * 2,
         ),
         ListData(
           title: 'Dart Study',
           subtitle: 'also study dart',
-          image: AssetImage('assets/images/dart.png'),
+          image: const AssetImage('assets/images/dart.png'),
           margin: listSlidePosition.value * 1,
         ),
         ListData(
           title: 'My LinkedIn',
           subtitle: 'See my LinkedIn',
-          image: AssetImage('assets/images/linkedin.png'),
+          image: const AssetImage('assets/images/linkedin.png'),
           margin: listSlidePosition.value * 0,
         ),
-      ]
+      ],
     );
   }
 }

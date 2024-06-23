@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ListData extends StatelessWidget {
+  const ListData({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.margin,
+  });
+
   final String title;
   final String subtitle;
   final ImageProvider image;
   final EdgeInsets margin;
-  const ListData({this.title, this.subtitle, this.image, this.margin});
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,47 +21,47 @@ class ListData extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey[50],
         border: Border(
-          top: BorderSide(color: Colors.grey[200], width: 1),
-          bottom: BorderSide(color: Colors.grey[300], width: 1)
-        )
+          top: BorderSide(color: Colors.grey[200]!, width: 1),
+          bottom: BorderSide(color: Colors.grey[300]!, width: 1),
+        ),
       ),
       child: Row(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.all(14),
-            width: 50, 
+            margin: const EdgeInsets.all(14),
+            width: 50,
             height: 50,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: image,
-                fit: BoxFit.cover
-              )
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                title, 
+                title,
                 style: TextStyle(
                   color: Colors.grey[900],
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                )
+                ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
-                subtitle, 
+                subtitle,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[800],
                   fontWeight: FontWeight.bold,
-                )
-              )
-            ]
+                ),
+              ),
+            ],
           ),
-        ]
+        ],
       ),
     );
   }

@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'input_field.dart';
 
 class FormContainer extends StatelessWidget {
+  const FormContainer({super.key});
+
+  static const padding = EdgeInsets.symmetric(horizontal: 24);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 25),
-      child: Form(
+      margin: padding,
+      child: const Form(
         child: Column(
-          children: <Widget>[
+          mainAxisSize: MainAxisSize.min,
+          children: [
             InputField(
               hint: 'Username',
               obscure: false,
@@ -17,7 +22,7 @@ class FormContainer extends StatelessWidget {
             InputField(
               hint: 'Password',
               obscure: true,
-              icon: Icons.lock_outline_rounded
+              icon: Icons.lock_outline_rounded,
             ),
           ],
         ),
