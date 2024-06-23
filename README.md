@@ -7,7 +7,6 @@
    - [About 📖](#about-)
    - [Preview 📱](#preview-)
    - [Functionalities and Resources 🛠️](#functionalities-and-resources-%EF%B8%8F)
-   - [Challenges and Learnings along the way 🤯](#---challenges-and-learnings-along-the-way----)
    - [How to Use 🤔](#how-to-use-)
    - [How to Contribute 💪](#how-to-contribute-)
    - [License 📝](#license-)
@@ -19,8 +18,7 @@
 <h2 align="center">About 📖</h2>
    
 <p align="center">
-  This Task Listing App is a UI and UX model that aims to improve the user experience. It's easily customizable and smooth across all screens, with added aesthetic touches to your app.<br>
-  This application countain a mass of user interface and user experience elements, with components to build an incredible task management and productivity application.<br>
+  Showing the power of Flutter and how it can be used to create complex animations and transitions, with a beautiful and responsive design.<br>
 </p>
 
 ---
@@ -28,10 +26,8 @@
 <h2 align="center">Preview 📱</h2>
 
   <p align="center">
-      <img src="assets/images/demo/animationsdemo.gif" width="400" alt="Animations Demo">
+      <img src="https://github.com/felipecastrosales/animations/assets/59374587/44bdde2d-434a-4513-b840-1a658a388ae9" width="400" alt="Animations Demo">
    </p>
-   
-   > * See also in [`demo`](https://github.com/felipecastrosales/animations/tree/master/assets/images/demo/animationsdemo.gif) folder. 🧐📂
 
 ---
 
@@ -47,18 +43,6 @@
 - And others that you can try... 😉
 
    </p>
-
----
-
-<h2 align="center">Challenges and Learnings along the way 🤯</h2>
-
-   <p>
-   At first, I was not quite understanding the logic of animations with Daer, and I felt a little difficulty about it.<br>
-   But during the tests, transitions, everything was getting better in my mind, I started to understand well, and finishing the application with few problems and difficulties.<br>
-   I had an error in the middle of the path that cost me a long time, and it was that the animation only received values in rgb, and not in hexadecimal, which was the form I was using, and I spent hours trying to solve this simple problem, but there was even more learning about these kinds problems.<br>
-   And that is the secret, to learn from our mistakes and the mistakes of others, so that they do not happen to us. 
-
-   </p> 
 
 ---
 
