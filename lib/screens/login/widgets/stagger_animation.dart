@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StaggerAnimation extends StatelessWidget {
-  final AnimationController controller;
-
   StaggerAnimation({
     super.key,
     required this.controller,
+    required this.endAnimationHeight,
   })  : buttonSqueeze = Tween(
           begin: 250.0,
           end: 50.0,
@@ -17,7 +16,7 @@ class StaggerAnimation extends StatelessWidget {
         ),
         buttonZoomOut = Tween<double>(
           begin: 60.0,
-          end: 1000.0,
+          end: endAnimationHeight,
         ).animate(
           CurvedAnimation(
             parent: controller,
@@ -25,25 +24,33 @@ class StaggerAnimation extends StatelessWidget {
           ),
         );
 
-  final Animation<double> buttonSqueeze;
-  final Animation<double> buttonZoomOut;
+  final AnimationController controller;
+  final Animation<double> buttonSqueeze, buttonZoomOut;
+  final double endAnimationHeight;
+
+  static const initialButtonHeight = 50.0;
+  static const initialPadding = EdgeInsets.fromLTRB(0, 36, 0, 16);
+  static final loginScreenSizes = initialButtonHeight + initialPadding.vertical;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
+      animation: controller,
       builder: (context, child) {
+        final isInMiddleAnimation =
+            buttonZoomOut.value < endAnimationHeight / 2;
+
         return Padding(
-          padding: const EdgeInsets.only(bottom: 60),
+          padding:
+              isInMiddleAnimation ? const EdgeInsets.all(0) : initialPadding,
           child: InkWell(
-            onTap: () {
-              controller.forward();
-            },
+            onTap: controller.forward,
             child: Hero(
               tag: 'fade',
               child: buttonZoomOut.value == 60
                   ? Container(
                       width: buttonSqueeze.value,
-                      height: 50,
+                      height: initialButtonHeight,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
@@ -61,8 +68,9 @@ class StaggerAnimation extends StatelessWidget {
                               ),
                             )
                           : const CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.white,
+                              ),
                               strokeWidth: 1.0,
                             ),
                     )
@@ -71,7 +79,7 @@ class StaggerAnimation extends StatelessWidget {
                       height: buttonZoomOut.value,
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
-                        shape: buttonZoomOut.value < 500
+                        shape: isInMiddleAnimation
                             ? BoxShape.circle
                             : BoxShape.rectangle,
                       ),
@@ -80,7 +88,6 @@ class StaggerAnimation extends StatelessWidget {
           ),
         );
       },
-      animation: controller,
     );
   }
 }

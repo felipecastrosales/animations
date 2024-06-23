@@ -1,3 +1,4 @@
+import 'package:animations/screens/login/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import '../home/home_screen.dart';
@@ -43,9 +44,16 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
+    const iconPadding = EdgeInsets.only(top: 80, bottom: 32);
+    const imageSize = 120.0;
+    final statusBar = MediaQuery.of(context).padding.top;
+    final signInPosition =
+        iconPadding.vertical + imageSize + (InputField.loginScreenSizes);
+
     timeDilation = 0.8;
+
     return Scaffold(
-      body: Container(
+      body: DecoratedBox(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/background.jpg'),
@@ -55,28 +63,47 @@ class _LoginScreenState extends State<LoginScreen>
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Stack(
-              alignment: Alignment.bottomCenter,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50, bottom: 25),
-                      child: Image.asset(
-                        'assets/images/check.png',
-                        width: 120,
-                        height: 120,
-                        fit: BoxFit.contain,
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height + statusBar,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                fit: StackFit.expand,
+                clipBehavior: Clip.none,
+                children: <Widget>[
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: iconPadding,
+                        child: Image.asset(
+                          'assets/images/check.png',
+                          width: imageSize,
+                          height: imageSize,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      const FormContainer(),
+                    ],
+                  ),
+                  Positioned(
+                    top: signInPosition + StaggerAnimation.loginScreenSizes,
+                    child: const SignUpButton(),
+                  ),
+                  Positioned.fill(
+                    top: _animationController.value < 60
+                        ? -statusBar
+                        : signInPosition,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: StaggerAnimation(
+                        controller: _animationController,
+                        endAnimationHeight:
+                            MediaQuery.sizeOf(context).height + statusBar,
                       ),
                     ),
-                    const FormContainer(),
-                    const SignUpButton(),
-                  ],
-                ),
-                StaggerAnimation(
-                  controller: _animationController,
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

@@ -4,13 +4,16 @@ import 'input_field.dart';
 class FormContainer extends StatelessWidget {
   const FormContainer({super.key});
 
+  static const padding = EdgeInsets.symmetric(horizontal: 24);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 25),
+      margin: padding,
       child: const Form(
         child: Column(
-          children: <Widget>[
+          mainAxisSize: MainAxisSize.min,
+          children: [
             InputField(
               hint: 'Username',
               obscure: false,
