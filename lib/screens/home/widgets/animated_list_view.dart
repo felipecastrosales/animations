@@ -17,7 +17,9 @@ class AnimatedListView extends StatelessWidget {
         ListData(
           title: 'I\'m Felipe Sales',
           subtitle: 'I like to study',
-          image: const AssetImage('assets/images/profile.png'),
+          image: Image.network(
+            'https://avatars.githubusercontent.com/u/59374587?v=4',
+          ).image,
           margin: listSlidePosition.value * 4,
         ),
         ListData(
